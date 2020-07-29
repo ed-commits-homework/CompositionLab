@@ -1,6 +1,6 @@
 package Actors;
 
-import Vechicles.Vehicle;
+import Vehicles.Vehicle;
 
 import java.util.ArrayList;
 

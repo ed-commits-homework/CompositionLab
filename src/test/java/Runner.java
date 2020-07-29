@@ -1,10 +1,14 @@
 import Actors.Customer;
 import Actors.Dealership;
 import Components.Engine;
+import Components.ElectricMotor;
+
 import Components.FuelType;
 import Components.Tyre;
 import Components.TyreType;
-import Vechicles.Car;
+import Vehicles.Car;
+import Vehicles.ElectricCar;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,6 +16,8 @@ import static org.junit.Assert.assertEquals;
 
 public class Runner {
     Car car1, car2, car3;
+    ElectricCar electricCar1;
+    ElectricMotor motor;
     Tyre tyre1, tyre2;
     Engine engine;
     Customer customer1;
@@ -25,6 +31,7 @@ public class Runner {
         tyre2 = new Tyre(TyreType.OFFROAD);
 
         engine = new Engine(60, FuelType.DIESEL);
+        motor = new ElectricMotor(100);
 
         customer1 = new Customer(12000.00);
         dealer1 = new Dealership(130000.00);
@@ -32,6 +39,8 @@ public class Runner {
         car1 = new Car("Toyota", 6130.00, "blue", engine);
         car2 = new Car("Ferrari", 16000.00, "red", engine);
         car3 = new Car("Ford", 3030.00, "hot pink", engine);
+
+        electricCar1 = new ElectricCar("Tesla", 17000.00, "silver", motor);
 
     }
 
@@ -74,7 +83,7 @@ public class Runner {
     public void testCheckGarage() {
         dealer1.stockCar(car1);
         dealer1.stockCar(car2);
-        dealer1.stockCar(car3);
+        dealer1.stockCar(electricCar1);
         customer1.purchaseCar(dealer1, car1);
         assertEquals(1, customer1.getGarage().size());
         assertEquals(2, dealer1.getStock().size());

@@ -1,8 +1,9 @@
-package Vechicles;
+package Vehicles;
 
 import Components.Engine;
+import Interfaces.ICost;
 
-public class Car extends Vehicle {
+public class Car extends Vehicle implements ICost {
     String colour;
     Engine engine;
 
@@ -12,5 +13,7 @@ public class Car extends Vehicle {
         this.engine = engine;
     }
 
-
+    public double cost() {
+        return this.getPrice() + engine.cost();
+    }
 }

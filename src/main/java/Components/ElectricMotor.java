@@ -1,6 +1,8 @@
 package Components;
 
-public class ElectricMotor {
+import Interfaces.ICost;
+
+public class ElectricMotor implements ICost {
 
     private int batteryCapacity;
 
@@ -10,5 +12,9 @@ public class ElectricMotor {
 
     public int getBatteryCapacity() {
         return batteryCapacity;
+    }
+
+    public double cost() {
+        return 1200 + batteryCapacity*150;
     }
 }

@@ -1,4 +1,4 @@
-package Vechicles;
+package Vehicles;
 
 public abstract class Vehicle {
 

@@ -1,4 +1,4 @@
-package Vechicles;
+package Vehicles;
 
 import Components.ElectricMotor;
 import Components.Engine;
