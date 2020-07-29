@@ -21,7 +21,8 @@ public class Customer {
         return garage;
     }
 
-    public void purchaseCar(Vehicle vehicle) {
+    public void purchaseCar(Dealership dealer, Vehicle vehicle) {
+        dealer.getStock().remove(vehicle);
         garage.add(vehicle);
     }
 }

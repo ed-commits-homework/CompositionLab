@@ -11,7 +11,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class Runner {
-    Car car;
+    Car car1, car2, car3;
     Tyre tyre1, tyre2;
     Engine engine;
     Customer customer1;
@@ -29,7 +29,10 @@ public class Runner {
         customer1 = new Customer(12000.00);
         dealer1 = new Dealership(130000.00);
 
-        car = new Car("Toyota", 6130.00, "red", engine);
+        car1 = new Car("Toyota", 6130.00, "blue", engine);
+        car2 = new Car("Ferrari", 16000.00, "red", engine);
+        car3 = new Car("Ford", 3030.00, "hot pink", engine);
+
     }
 
     @Test
@@ -39,12 +42,12 @@ public class Runner {
 
     @Test
     public void testCarGetName() {
-        assertEquals("Toyota", car.getName());
+        assertEquals("Toyota", car1.getName());
     }
 
     @Test
     public void testCarGetPrice() {
-        assertEquals(6130.00, car.getPrice(), 0.00001);
+        assertEquals(6130.00, car1.getPrice(), 0.00001);
     }
 
     @Test
@@ -69,12 +72,18 @@ public class Runner {
 
     @Test
     public void testCheckGarage() {
-        customer1.purchaseCar(car);
+        dealer1.stockCar(car1);
+        dealer1.stockCar(car2);
+        dealer1.stockCar(car3);
+        customer1.purchaseCar(dealer1, car1);
         assertEquals(1, customer1.getGarage().size());
+        assertEquals(2, dealer1.getStock().size());
     }
     @Test
     public void testCheckStock() {
-        dealer1.stockCar(car);
-        assertEquals(1, dealer1.getStock().size());
+        dealer1.stockCar(car1);
+        dealer1.stockCar(car2);
+        dealer1.stockCar(car3);
+        assertEquals(3, dealer1.getStock().size());
     }
 }
