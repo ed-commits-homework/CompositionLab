@@ -21,8 +21,6 @@ public class Runner {
     public void setup() {
         System.out.println("Test");
 
-        car = new Car("Toyota", 6130.00);
-
         tyre1 = new Tyre(TyreType.SPORT);
         tyre2 = new Tyre(TyreType.OFFROAD);
 
@@ -30,6 +28,8 @@ public class Runner {
 
         customer1 = new Customer(12000.00);
         dealer1 = new Dealership(130000.00);
+
+        car = new Car("Toyota", 6130.00, "red", engine);
     }
 
     @Test

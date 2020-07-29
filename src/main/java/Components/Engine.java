@@ -7,7 +7,7 @@ public class Engine {
 
     public Engine(int fuelTankCapacity, FuelType fuelType){
         this.fuelTankCapacity = fuelTankCapacity;
-        this. fuelType = fuelType;
+        this.fuelType = fuelType;
     }
 
     public int getFuelTankCapacity() {
