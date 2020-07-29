@@ -95,4 +95,14 @@ public class Runner {
         dealer1.stockCar(car3);
         assertEquals(3, dealer1.getStock().size());
     }
+
+    @Test
+    public void testCostCar1() {
+        assertEquals(9220.0, car1.cost(), 0.000001);
+    }
+
+    @Test
+    public void testCostElectricCar1() {
+        assertEquals(33200.0, electricCar1.cost(), 0.000001);
+    }
 }

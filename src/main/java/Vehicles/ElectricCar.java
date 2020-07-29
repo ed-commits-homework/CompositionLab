@@ -2,7 +2,7 @@ package Vehicles;
 
 import Components.ElectricMotor;
 
-public class ElectricCar extends Vehicle {
+public class ElectricCar extends Vehicles.Vehicle {
     String colour;
     ElectricMotor motor;
 
@@ -10,5 +10,10 @@ public class ElectricCar extends Vehicle {
         super(name, price);
         this.colour = colour;
         this.motor = motor;
+
     }
+    public double cost(){
+        return this.getPrice() + motor.cost();
+    }
+
 }
