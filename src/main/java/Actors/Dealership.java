@@ -20,4 +20,8 @@ public class Dealership {
     public ArrayList<Vehicle> getStock() {
         return stock;
     }
+
+    public void stockCar(Vehicle vehicle) {
+        stock.add(vehicle);
+    }
 }

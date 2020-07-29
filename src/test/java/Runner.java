@@ -66,4 +66,15 @@ public class Runner {
     public void testGetTill() {
         assertEquals(130000.00, dealer1.getTill(), 0.01);
     }
+
+    @Test
+    public void testCheckGarage() {
+        customer1.purchaseCar(car);
+        assertEquals(1, customer1.getGarage().size());
+    }
+    @Test
+    public void testCheckStock() {
+        dealer1.stockCar(car);
+        assertEquals(1, dealer1.getStock().size());
+    }
 }

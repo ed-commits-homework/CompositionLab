@@ -20,4 +20,8 @@ public class Customer {
     public ArrayList<Vehicle> getGarage() {
         return garage;
     }
+
+    public void purchaseCar(Vehicle vehicle) {
+        garage.add(vehicle);
+    }
 }
