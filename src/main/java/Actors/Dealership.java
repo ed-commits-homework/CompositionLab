@@ -24,4 +24,8 @@ public class Dealership {
     public void stockCar(Vehicle vehicle) {
         stock.add(vehicle);
     }
+
+    public void transferMoney(double money) {
+        till += money;
+    }
 }

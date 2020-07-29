@@ -23,6 +23,8 @@ public class Customer {
 
     public void purchaseCar(Dealership dealer, Vehicle vehicle) {
         dealer.getStock().remove(vehicle);
+        wallet -= vehicle.charges();
         garage.add(vehicle);
     }
+
 }

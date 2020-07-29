@@ -80,14 +80,31 @@ public class Runner {
     }
 
     @Test
-    public void testCheckGarage() {
+    public void testPurchase() {
         dealer1.stockCar(car1);
         dealer1.stockCar(car2);
         dealer1.stockCar(electricCar1);
         customer1.purchaseCar(dealer1, car1);
+        assertEquals(2780.00, customer1.getWallet(),0.01);
         assertEquals(1, customer1.getGarage().size());
         assertEquals(2, dealer1.getStock().size());
     }
+
+    @Test
+    public void testDamagedPurchase() {
+        dealer1.stockCar(car1);
+        dealer1.stockCar(car2);
+        dealer1.stockCar(electricCar1);
+        car1.causeDamage();
+        car1.causeDamage();
+        car1.causeDamage();
+        car1.causeDamage();
+        customer1.purchaseCar(dealer1, car1);
+        assertEquals(3380.00, customer1.getWallet(),0.01);
+        assertEquals(1, customer1.getGarage().size());
+        assertEquals(2, dealer1.getStock().size());
+    }
+
     @Test
     public void testCheckStock() {
         dealer1.stockCar(car1);
@@ -104,5 +121,11 @@ public class Runner {
     @Test
     public void testCostElectricCar1() {
         assertEquals(33200.0, electricCar1.cost(), 0.000001);
+    }
+
+    @Test
+    public void testTransferMoney() {
+        dealer1.transferMoney(50);
+        assertEquals(130000.00+50, dealer1.getTill(), 0.00001);
     }
 }
