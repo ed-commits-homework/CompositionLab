@@ -34,4 +34,8 @@ public abstract class Vehicle implements ICost {
     public void causeDamage() {
         damage += 150;
     }
+
+    public void resetDamage() {
+        damage = 0;
+    }
 }

@@ -28,4 +28,9 @@ public class Dealership {
     public void transferMoney(double money) {
         till += money;
     }
+
+    public void repair(Vehicle vehicle) {
+        till -= vehicle.getDamage();
+        vehicle.resetDamage();
+    }
 }

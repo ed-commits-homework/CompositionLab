@@ -104,6 +104,16 @@ public class Runner {
         assertEquals(1, customer1.getGarage().size());
         assertEquals(2, dealer1.getStock().size());
     }
+    @Test
+    public void testRepairCar() {
+        dealer1.stockCar(car1);
+        car1.causeDamage();
+        car1.causeDamage();
+        car1.causeDamage();
+        car1.causeDamage();
+        dealer1.repair(car1);
+        assertEquals(129400.00, dealer1.getTill(),0.01);
+    }
 
     @Test
     public void testCheckStock() {
