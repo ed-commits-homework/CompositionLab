@@ -7,6 +7,8 @@ public class Runner {
     Car car;
     Tyre tyre1, tyre2;
     Engine engine;
+    Customer customer1;
+    Dealership dealer1;
 
     @Before
     public void setup() {
@@ -18,6 +20,9 @@ public class Runner {
         tyre2 = new Tyre(TyreType.OFFROAD);
 
         engine = new Engine(60, FuelType.DIESEL);
+
+        customer1 = new Customer(12000.00);
+        dealer1 = new Dealership(130000.00);
     }
 
     @Test
@@ -43,5 +48,15 @@ public class Runner {
     @Test
     public void testEngineGetCapacity() {
         assertEquals(60, engine.getFuelTankCapacity());
+    }
+
+    @Test
+    public void testGetWallet() {
+        assertEquals(12000.00, customer1.getWallet(), 0.01);
+    }
+
+    @Test
+    public void testGetTill() {
+        assertEquals(130000.00, dealer1.getTill(), 0.01);
     }
 }
