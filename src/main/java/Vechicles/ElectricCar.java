@@ -4,11 +4,11 @@ import Components.ElectricMotor;
 
 public class ElectricCar extends Vehicle {
     String colour;
-    ElectricMotor electricMotor;
+    ElectricMotor motor;
 
-    public ElectricCar(String name, Double price, String colour, ElectricMotor electricMotor) {
+    public ElectricCar(String name, Double price, String colour, ElectricMotor motor) {
         super(name, price);
         this.colour = colour;
-        this.electricMotor = electricMotor;
+        this.motor = motor;
     }
 }
