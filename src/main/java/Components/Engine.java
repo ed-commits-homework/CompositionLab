@@ -1,3 +1,5 @@
+package Components;
+
 public class Engine {
 
     private int fuelTankCapacity;

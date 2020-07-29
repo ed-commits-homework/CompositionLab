@@ -1,3 +1,5 @@
+package Components;
+
 public class Tyre {
     TyreType tyreType;
 

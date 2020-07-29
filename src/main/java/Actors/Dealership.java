@@ -1,3 +1,7 @@
+package Actors;
+
+import Vechicles.Vehicle;
+
 import java.util.ArrayList;
 
 public class Dealership {

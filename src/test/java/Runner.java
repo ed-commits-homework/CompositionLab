@@ -1,3 +1,10 @@
+import Actors.Customer;
+import Actors.Dealership;
+import Components.Engine;
+import Components.FuelType;
+import Components.Tyre;
+import Components.TyreType;
+import Vechicles.Car;
 import org.junit.Before;
 import org.junit.Test;
 
